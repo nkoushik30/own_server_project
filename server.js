@@ -1,10 +1,13 @@
 const express = require("express");
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Server running on phone");
+// Serve frontend files
+app.use(express.static("public"));
+
+app.get("/api", (req, res) => {
+  res.send("API is working");
 });
 
 app.listen(2020, () => {
-  console.log("Server started on port 2020");
+  console.log("Server running on port 2020");
 });
